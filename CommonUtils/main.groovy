@@ -21,20 +21,20 @@ Object GenerateArgsHelper (args){
 
 class HelperObject {
     
-    static void main (){
+    def void main (){
         //Overloading the main method to allow non arguments to be passed for initial testing.
         this.args = {}
         this.initialize()
     }
     
-    static void main (String [] args){
+    def void main (String [] args){
         //In theory, args may be used to overwrite
         this.args = args
         
         this.initialize()
     }
     
-    static void initialize (){
+    def void initialize (){
         this.Workspace = "${WORKSPACE}"
         echo "Workspace is ${this.Workspace}"
         this.BuildId = "${BUILD_ID}"
@@ -43,7 +43,7 @@ class HelperObject {
         echo "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
     }
     
-    static void test (){
+    def void test (){
         echo "test method Entered"
     }
 }
