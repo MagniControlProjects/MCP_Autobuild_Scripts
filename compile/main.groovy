@@ -9,7 +9,7 @@ pipeline{
             script{
                 COMMON_UTILS_LOAD_LOCATION = "${WORKSPACE}/autobuild/CommonUtils/main.groovy"
                 echo ("CommonUtils at ${COMMON_UTILS_LOAD_LOCATION}")
-                def JobHelper = new HelperObject() with loadScriptByName (COMMON_UTILS_LOAD_LOCATION))
+                def JobHelper = new HelperObject() with loadScriptByName (COMMON_UTILS_LOAD_LOCATION)
             }
         }
     }
