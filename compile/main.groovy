@@ -6,8 +6,8 @@ pipeline{
         steps{
             script{
                 echo ("Load autobuild main containing helper object")
-                load ("${WORKSPACE}/autobuild/CommonUtils/main.groovy")
-                Helper JobHelper = new HelperObject()
+                tools = load ("${WORKSPACE}/autobuild/CommonUtils/main.groovy")
+                def JobHelper = new tools.HelperObject()
             }
         }
     }
