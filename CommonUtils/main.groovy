@@ -11,12 +11,8 @@
  * 
  */
 
-Object GenerateHelper (){
-    return this.getClass().GetClassLoader().loadClass().newInstance();
-}
-
-Object GenerateArgsHelper (args){
-    return this.getClass().GetClassLoader().loadClass(args).newInstance();
+Object GetProperty (String name){
+    return this.getClass().GetClassLoader().loadClass(name).newInstance();
 }
 
 class HelperObject {
@@ -51,3 +47,5 @@ class HelperObject {
         return "ReturnedStuff"
     }
 }
+
+return this
