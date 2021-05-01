@@ -34,6 +34,8 @@ pipeline{
             steps{
                 script{
                     echo "Do Stuff"
+                    Helper.testReturn()
+                    
                 }
             }
         }
