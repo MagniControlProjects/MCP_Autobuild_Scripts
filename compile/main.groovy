@@ -1,3 +1,5 @@
+import"${WORKSPACE}/autobuild/CommonUtils/main.groovy"
+
 pipeline{
     agent {
         label "${AGENT_LABEL}"
@@ -6,7 +8,7 @@ pipeline{
         steps{
             script{
                 echo ("Load autobuild main containing helper object")
-                tools = load ("${WORKSPACE}/autobuild/CommonUtils/main.groovy")
+                //tools = load ("${WORKSPACE}/autobuild/CommonUtils/main.groovy")
                 def JobHelper = new HelperObject()
             }
         }

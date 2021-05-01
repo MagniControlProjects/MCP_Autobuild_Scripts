@@ -13,16 +13,16 @@
 
 class HelperObject (){
     
+    static void main (){
+        //Overloading the main method to allow non arguments to be passed for initial testing.
+        this.args = {}
+        this.initialize()
+    }
+    
     static void main (String [] args){
         //In theory, args may be used to overwrite
         this.args = args
         
-        this.initialize()
-    }
-    
-    static void main (){
-        //Overloading the main method to allow non arguments to be passed for initial testing.
-        this.args = {}
         this.initialize()
     }
     
