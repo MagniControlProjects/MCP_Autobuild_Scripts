@@ -23,6 +23,7 @@ class HelperObject {
         this.Workspace = WORKSPACE;
         this.BuildId = BUILDID;
         this.BuildName = BUILDNAME;
+        echo "CleanEcho."
         echo "Workspace is ${this.Workspace}"
         echo "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
     }
