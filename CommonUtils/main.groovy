@@ -16,8 +16,9 @@
 class HelperObject {
     
     def Workspace = String
-    def BuildID = String 
+    def BuildId = String 
     def BuildName = String
+    def this.RandomStuff = String
     def  initialize (
             String WORKSPACE,
             String BUILDID,
@@ -26,6 +27,7 @@ class HelperObject {
         Workspace = WORKSPACE;
         BuildId = BUILDID;
         BuildName = BUILDNAME;
+        echo "this.RandomStuff"
         echo "CleanEcho."
         echo "Workspace is ${this.Workspace}"
         echo "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
