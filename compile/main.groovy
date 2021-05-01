@@ -1,4 +1,3 @@
-import autobuild.main.HelperObject
 pipeline{
     agent {
         label "${AGENT_LABEL}"
