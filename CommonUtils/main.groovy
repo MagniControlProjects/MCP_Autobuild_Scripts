@@ -15,6 +15,8 @@
 
 class HelperObject {
     
+    def args = {}
+    
     def  main (){
         //Overloading the main method to allow non arguments to be passed for initial testing.
         this.args = {}
