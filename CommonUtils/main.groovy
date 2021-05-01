@@ -11,9 +11,7 @@
  * 
  */
 
-Object GetProperty (String name){
-    return this.getClass().GetClassLoader().loadClass(name).newInstance();
-}
+
 
 class HelperObject {
     
