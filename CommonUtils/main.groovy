@@ -33,7 +33,7 @@ class HelperObject {
     
     def  test (){
         echo "test method Entered"
-        echo "${WORKSPACE}
+        echo "${WORKSPACE}"
     }
     
     def testReturn (){
