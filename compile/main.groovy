@@ -43,6 +43,8 @@ pipeline{
         stage("Do Building"){
             steps{
                 script{
+                    echo "Test Object Variable Pulling"
+                    echo "${Obj_Helper.BuildId}"
                     echo "Do Stuff"
                 }
             }

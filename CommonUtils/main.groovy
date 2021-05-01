@@ -26,18 +26,23 @@ class HelperObject {
         Workspace = WORKSPACE;
         BuildId = BUILDID;
         BuildName = BUILDNAME;
-        echo "CleanEcho."
+        bat """
         echo "Workspace is ${this.Workspace}"
         echo "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
+        """
     }
     
     def  test (){
-        echo "test method Entered"
-        echo "${WORKSPACE}"
+        bat """
+            echo "test method Entered"
+            echo "${WORKSPACE}"
+        """
     }
     
     def testReturn (){
-        echo "InTestReturn"
+        bat """
+            echo "InTestReturn"
+        """"
         return "${this.WORKSPACE}"
     }
 }
