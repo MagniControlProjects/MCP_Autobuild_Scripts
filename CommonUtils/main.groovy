@@ -7,7 +7,7 @@
  *   
  *   Notes:
  *   evaluate is a key term for importing script. load abstracts a layer up from this.
- * 
+ *   Objects cannot pull or set from environment. therefore all must be handed over manually.
  * 
  */
 
@@ -30,12 +30,11 @@ class HelperObject {
         this.initialize()
     }
     
-    def  initialize (){
-        this.Workspace = "${env.WORKSPACE}"
+    def  initialize (WORKSPACE,BUILDID,BUILDNAME){
+        this.Workspace = WORKSPACE
+        this.BuildId = BUILDID
+        this.BuildName = BUILDNAME
         echo "Workspace is ${this.Workspace}"
-        this.BuildId = "${env.BUILD_ID}"
-        this.BuildName = "${env.BUILD_NAME}"
-        
         echo "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
     }
     
