@@ -1,4 +1,4 @@
-import autobuild.CommonUtils.main.HelperObject
+import autobuild.main.HelperObject
 pipeline{
     agent {
         label "${AGENT_LABEL}"
@@ -8,12 +8,10 @@ pipeline{
             script{
                 
                 COMMON_UTILS_LOAD_LOCATION = "${WORKSPACE}/autobuild/CommonUtils/main.groovy"
-                load (COMMON_UTILS_LOAD_LOCATION)
                 echo ("CommonUtils at ${COMMON_UTILS_LOAD_LOCATION}")
-                def JobHelper = new HelperObject().with{
-                    loadScriptByName (COMMON_UTILS_LOAD_LOCATION)
-                    
-                }
+                Helper1 = load (COMMON_UTILS_LOAD_LOCATION).GenerateHelper()
+                Helper2 = load (COMMON_UTILS_LOAD_LOCATION).GenerateHelper({"A":"B"})
+                
             }
         }
     }

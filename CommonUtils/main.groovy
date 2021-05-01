@@ -11,6 +11,14 @@
  * 
  */
 
+Object GenerateHelper (){
+    return this.getClass().GetClassLoader().loadClass().newInstance();
+}
+
+Object GenerateArgsHelper (args){
+    return this.getClass().GetClassLoader().loadClass(args).newInstance();
+}
+
 class HelperObject (){
     
     static void main (){
