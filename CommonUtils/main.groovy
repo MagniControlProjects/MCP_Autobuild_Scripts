@@ -31,10 +31,10 @@ class HelperObject {
     }
     
     def  initialize (){
-        this.Workspace = "${WORKSPACE}"
+        this.Workspace = "${env.WORKSPACE}"
         echo "Workspace is ${this.Workspace}"
-        this.BuildId = "${BUILD_ID}"
-        this.BuildName = "${BUILD_NAME}"
+        this.BuildId = "${env.BUILD_ID}"
+        this.BuildName = "${env.BUILD_NAME}"
         
         echo "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
     }
