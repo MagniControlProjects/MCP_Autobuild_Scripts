@@ -37,7 +37,7 @@ class HelperObject {
     
     def testReturn (){
         println "InTestReturn"
-        return "${WORKSPACE}"
+        return "${this.Workspace}"
     }
 }
 
