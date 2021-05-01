@@ -18,7 +18,7 @@ pipeline{
             steps{
                 script{
                     echo "Do Stuff"
-                    Helper.test()
+                    Helper.main()
                 }
             }
         }
@@ -26,6 +26,7 @@ pipeline{
             steps{
                 script{
                     echo "Do Stuff"
+                    Helper.test()
                 }
             }
         }

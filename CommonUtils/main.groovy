@@ -19,7 +19,7 @@ Object GenerateArgsHelper (args){
     return this.getClass().GetClassLoader().loadClass(args).newInstance();
 }
 
-class HelperObject (){
+class HelperObject {
     
     static void main (){
         //Overloading the main method to allow non arguments to be passed for initial testing.
