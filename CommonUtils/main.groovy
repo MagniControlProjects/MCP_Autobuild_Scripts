@@ -42,7 +42,7 @@ class HelperObject {
     def testReturn (){
         bat """
             echo "InTestReturn"
-        """"
+        """
         return "${this.WORKSPACE}"
     }
 }
