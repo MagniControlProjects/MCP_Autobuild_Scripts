@@ -1,3 +1,4 @@
+import main.HelperObject
 pipeline{
     agent {
         label "${AGENT_LABEL}"
@@ -5,7 +6,7 @@ pipeline{
     stage ("Initialize Job"){
         steps{
             script{
-                import main.HelperObject
+                
                 COMMON_UTILS_LOAD_LOCATION = "${WORKSPACE}/autobuild/CommonUtils/main.groovy"
                 load (COMMON_UTILS_LOAD_LOCATION)
                 echo ("CommonUtils at ${COMMON_UTILS_LOAD_LOCATION}")
