@@ -1,5 +1,3 @@
-
-
 pipeline{
     agent {
         label "${AGENT_LABEL}"
@@ -11,7 +9,7 @@ pipeline{
                 echo ("CommonUtils at ${COMMON_UTILS_LOAD_LOCATION}")
                 def JobHelper = new HelperObject().with{
                     loadScriptByName (COMMON_UTILS_LOAD_LOCATION)
-                    }
+                    
                 }
             }
         }
