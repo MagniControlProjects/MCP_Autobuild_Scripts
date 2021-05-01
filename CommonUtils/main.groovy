@@ -14,7 +14,10 @@
 
 
 class HelperObject {
-    def args = {}
+    
+    this.Workspace = String
+    this.BuildID = String 
+    this.BuildName = String
     def  initialize (
             String WORKSPACE,
             String BUILDID,
