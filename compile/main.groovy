@@ -1,4 +1,4 @@
-import"${WORKSPACE}/autobuild/CommonUtils/main.groovy"
+
 
 pipeline{
     agent {
@@ -7,9 +7,9 @@ pipeline{
     stage ("Initialize Job"){
         steps{
             script{
-                echo ("Load autobuild main containing helper object")
-                //tools = load ("${WORKSPACE}/autobuild/CommonUtils/main.groovy")
-                def JobHelper = new HelperObject()
+                COMMON_UTILS_LOAD_LOCATION = "${WORKSPACE}/autobuild/CommonUtils/main.groovy"
+                echo ("CommonUtils at ${COMMON_UTILS_LOAD_LOCATION}")
+                def JobHelper = new HelperObject() with loadScriptByName (COMMON_UTILS_LOAD_LOCATION))
             }
         }
     }
