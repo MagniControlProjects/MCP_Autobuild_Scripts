@@ -14,23 +14,12 @@
 
 
 class HelperObject {
-    
     def args = {}
-    
-    def  main (){
-        //Overloading the main method to allow non arguments to be passed for initial testing.
-        this.args = {}
-        this.initialize()
-    }
-    
-    def  main (String [] args){
-        //In theory, args may be used to overwrite
-        this.args = args
-        
-        this.initialize()
-    }
-    
-    def  initialize (WORKSPACE,BUILDID,BUILDNAME){
+    def  initialize (
+            String WORKSPACE,
+            String BUILDID,
+            String BUILDNAME
+            ){
         this.Workspace = WORKSPACE
         this.BuildId = BUILDID
         this.BuildName = BUILDNAME

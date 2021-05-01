@@ -19,7 +19,7 @@ pipeline{
             steps{
                 script{
                     echo "Do Stuff"
-                    Obj_Helper.main("${WORKSPACE}","${BUILD_ID}","${JOB_NAME}")
+                    Obj_Helper.initialize("${WORKSPACE}","${BUILD_ID}","${JOB_NAME}")
                 }
             }
         }
