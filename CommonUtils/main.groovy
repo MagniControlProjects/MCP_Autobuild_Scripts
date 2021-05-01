@@ -49,3 +49,5 @@ class HelperObject {
 def GetHelperObject(){
     return new HelperObject()
 }
+
+return this;
