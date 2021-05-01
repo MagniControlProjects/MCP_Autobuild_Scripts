@@ -15,17 +15,17 @@
 
 class HelperObject {
     
-    this.Workspace = String
-    this.BuildID = String 
-    this.BuildName = String
+    def Workspace = String
+    def BuildID = String 
+    def BuildName = String
     def  initialize (
             String WORKSPACE,
             String BUILDID,
             String BUILDNAME
             ){
-        this.Workspace = WORKSPACE;
-        this.BuildId = BUILDID;
-        this.BuildName = BUILDNAME;
+        Workspace = WORKSPACE;
+        BuildId = BUILDID;
+        BuildName = BUILDNAME;
         echo "CleanEcho."
         echo "Workspace is ${this.Workspace}"
         echo "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
@@ -33,10 +33,12 @@ class HelperObject {
     
     def  test (){
         echo "test method Entered"
+        echo "${WORKSPACE}
     }
     
     def testReturn (){
-        return "ReturnedStuff"
+        echo "InTestReturn"
+        return "${this.WORKSPACE}"
     }
 }
 
