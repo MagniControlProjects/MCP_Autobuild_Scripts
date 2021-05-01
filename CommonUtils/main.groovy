@@ -7,7 +7,7 @@
 /   
 */
 
-class Helper (){
+class HelperObject (){
     
     static void main (String [] args){
         //In theory, args may be used to overwrite
