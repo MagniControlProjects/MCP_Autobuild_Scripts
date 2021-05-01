@@ -10,7 +10,7 @@ pipeline{
                     COMMON_UTILS_LOAD_LOCATION = "${WORKSPACE}/autobuild/CommonUtils/main.groovy"
                     echo ("CommonUtils at ${COMMON_UTILS_LOAD_LOCATION}")
                     HelperScript = load (COMMON_UTILS_LOAD_LOCATION)
-                    Helper1 = HelperScript.GetHelperObject()
+                    Obj_Helper = HelperScript.GetHelperObject()
                     
                 }
             }
@@ -19,7 +19,7 @@ pipeline{
             steps{
                 script{
                     echo "Do Stuff"
-                    Helper.main()
+                    Obj_Helper.main()
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline{
             steps{
                 script{
                     echo "Do Stuff"
-                    Helper.test()
+                    Obj_Helper.test()
                 }
             }
         }
@@ -35,7 +35,7 @@ pipeline{
             steps{
                 script{
                     echo "Do Stuff"
-                    Helper.testReturn()
+                    echo "${Obj_Helper.testReturn()}"
                     
                 }
             }
