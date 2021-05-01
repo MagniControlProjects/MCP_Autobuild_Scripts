@@ -32,7 +32,7 @@ class HelperObject {
     
     def  test (){
         println "test method Entered"
-        println "${WORKSPACE}"
+        println "${Workspace}"
     }
     
     def testReturn (){
