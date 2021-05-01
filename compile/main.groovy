@@ -3,7 +3,7 @@ pipeline{
         label "${AGENT_LABEL}"
     }
     stages{
-        stage ("Initialize Job"){
+        stage ("STAGE: Initialize Job"){
             steps{
                 script{
                     
@@ -15,7 +15,7 @@ pipeline{
                 }
             }
         }
-        stage("Checkout Dependencies"){
+        stage("STAGE: Checkout Dependencies"){
             steps{
                 script{
                     echo "Do Stuff"
@@ -23,7 +23,7 @@ pipeline{
                 }
             }
         }
-        stage("Setup Build Folder"){
+        stage("STAGE: Setup Build Folder"){
             steps{
                 script{
                     echo "Do Stuff"
@@ -31,7 +31,7 @@ pipeline{
                 }
             }
         }
-        stage("Generate Version Info"){
+        stage("STAGE: Generate Version Info"){
             steps{
                 script{
                     echo "Do Stuff"
@@ -40,7 +40,7 @@ pipeline{
                 }
             }
         }
-        stage("Do Building"){
+        stage("STAGE: Do Building"){
             steps{
                 script{
                     echo "Test Object Variable Pulling"
@@ -49,7 +49,7 @@ pipeline{
                 }
             }
         }
-        stage("Store Artifacts"){
+        stage("STAGE: Store Artifacts"){
             steps{
                 script{
                     echo "Do Stuff"
