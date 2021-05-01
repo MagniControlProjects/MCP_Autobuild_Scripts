@@ -10,7 +10,7 @@ pipeline{
                     COMMON_UTILS_LOAD_LOCATION = "${WORKSPACE}/autobuild/CommonUtils/main.groovy"
                     echo ("CommonUtils at ${COMMON_UTILS_LOAD_LOCATION}")
                     HelperScript = load (COMMON_UTILS_LOAD_LOCATION)
-                    def Helper1 = HelperScript.HelperObject()
+                    Helper1 = HelperScript.GetHelperObject()
                     
                 }
             }

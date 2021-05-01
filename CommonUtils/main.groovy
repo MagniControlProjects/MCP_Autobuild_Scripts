@@ -48,4 +48,6 @@ class HelperObject {
     }
 }
 
-return this
+def GetHelperObject(){
+    return new HelperObject()
+}
