@@ -6,7 +6,7 @@ pipeline{
         steps{
             script{
                 echo ("Load autobuild main containing helper object")
-                load ("${WORKSPACE}/autobuild/main.groovy")
+                load ("${WORKSPACE}/autobuild/CommonUtils/main.groovy")
                 Helper = new Helper()
             }
         }
@@ -19,7 +19,7 @@ pipeline{
             }
         }
     }
-    stage("Setup Build Folder"){}
+    stage("Setup Build Folder"){
         steps{
             script{
                 echo "Do Stuff"
