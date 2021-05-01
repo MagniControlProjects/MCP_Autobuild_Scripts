@@ -20,9 +20,9 @@ class HelperObject {
             String BUILDID,
             String BUILDNAME
             ){
-        this.Workspace = WORKSPACE
-        this.BuildId = BUILDID
-        this.BuildName = BUILDNAME
+        this.Workspace = WORKSPACE;
+        this.BuildId = BUILDID;
+        this.BuildName = BUILDNAME;
         echo "Workspace is ${this.Workspace}"
         echo "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
     }
