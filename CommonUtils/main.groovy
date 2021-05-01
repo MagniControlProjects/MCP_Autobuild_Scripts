@@ -36,11 +36,11 @@ class HelperObject {
     
     static void initialize (){
         this.Workspace = "${WORKSPACE}"
-        echo `Workspace is ${this.Workspace}`
+        echo "Workspace is ${this.Workspace}"
         this.BuildId = "${BUILD_ID}"
         this.BuildName = "${BUILD_NAME}"
         
-        echo `Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}`
+        echo "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
     }
     
     static void test (){
