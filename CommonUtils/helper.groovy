@@ -11,7 +11,7 @@
 
 static def printTrace (List tracelist){
     tracelist.each{
-        println("${i}n")
+        println("${it}n")
     }
     return
 }
