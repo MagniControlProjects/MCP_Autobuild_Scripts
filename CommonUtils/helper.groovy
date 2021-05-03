@@ -22,7 +22,7 @@ class HelperObject {
     def Workspace = String 
     def BuildId = String 
     def BuildName = String
-    def DestroyTrace = false
+    def _DestroyTrace = false
     def trace = []
     // Constructor method, class requires passing of parameters on creation.
     HelperObject (
@@ -54,8 +54,11 @@ class HelperObject {
     def getTrace (Boolean DestroyTrace){
             // As I can't seem to print from terminal, action will be stored in a trace.
             _DestroyTrace = DestroyTrace // Flag for destruction of trace on next append
-        
-        return  
+        return  trace
+    }
+    
+    def getTrace (){
+        return trace
     }
     
     def testObjectToConsole (){
