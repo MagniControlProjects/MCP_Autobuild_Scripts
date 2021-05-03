@@ -5,6 +5,7 @@
  *   Object will grow to support minimal requirements in jobs.
  *   The assumption is made that jenkins Environment variables are present.
  *   
+ *  apparently << = append to list.
  * 
  */
 
@@ -58,26 +59,26 @@ class HelperObject {
         Workspace = WORKSPACE;
         BuildId = BUILDID;
         BuildName = BUILDNAME;
-        trace.push("Workspace is ${this.Workspace}")
-        trace.push("Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}")
+        trace <<("Workspace is ${this.Workspace}")
+        trace <<("Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}")
     }
     
     def clearTrace (){
         // As I can't seem to print from terminal, action will be stored in a trace.
-        trace = trace
+        trace = []
         return  
     }
     
     def testObjectToConsole (){
         // Print something to the console from inside the object class.
-        trace.push ("Inside HelperObject, testObjectToConsole method.")
-        trace.push ("${Workspace}")
+        trace << ("Inside HelperObject, testObjectToConsole method.")
+        trace << ("${Workspace}")
         return
     }
     
     def testReturn (){
         // Returnt the value of an attribute which may be generated inside the method.
-        trace.push ("InTestReturn")
+        trace << ("InTestReturn")
         return "${Workspace}"
     }
     
