@@ -47,10 +47,9 @@ class HelperObject {
     }
     
     def getTrace (Boolean DestroyTrace){
-        // As I can't seem to print from terminal, action will be stored in a trace.
-        _DestroyTrace = DestroyTrace // Flag for destruction of trace on next append
-            
-        }
+            // As I can't seem to print from terminal, action will be stored in a trace.
+            _DestroyTrace = DestroyTrace // Flag for destruction of trace on next append
+        
         return  
     }
     
