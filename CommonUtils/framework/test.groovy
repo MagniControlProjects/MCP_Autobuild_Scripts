@@ -10,7 +10,7 @@ pipeline{
                     echo ("CommonUtils at ${COMMON_UTILS_LOAD_LOCATION}")
                     HelperScript = load (COMMON_UTILS_LOAD_LOCATION)
                     Obj_Helper = HelperScript.GetHelperObject("${WORKSPACE}","${BUILD_ID}","${JOB_NAME}")
-                    echo "Test1: Output to console from inside the pipeline.
+                    echo "Test1: Output to console from inside the pipeline."
                 }
             }
         }
