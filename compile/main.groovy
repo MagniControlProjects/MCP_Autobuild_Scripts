@@ -20,6 +20,9 @@ pipeline{
                 script{
                     echo "Do Stuff"
                     Obj_Helper.initialize("${WORKSPACE}","${BUILD_ID}","${JOB_NAME}")
+                    test = [1,2,3]
+                    echo test
+                    test.each{echo ${it}}}
                 }
             }
         }

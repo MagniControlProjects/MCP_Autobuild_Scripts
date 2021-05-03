@@ -16,11 +16,10 @@ pipeline{
         stage("STAGE: Print To console from inside Object Not Possible"){
             steps{
                 script{
-                    
-                    Obj_Helper.testObjectToConsole()
                     echo "Test1: Output to console from inside the the Object."
+                    Obj_Helper.testObjectToConsole()
                     HelperScript.printObjectTrace(Obj_Helper)
-                    
+                    echo "Test1: Complete."
                 }
             }
         }
