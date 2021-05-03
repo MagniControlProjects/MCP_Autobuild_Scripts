@@ -26,7 +26,7 @@ printObjectTrace (
         try{
             TraceableObject.clearTrace
         }
-        except{
+        catch{
             println("Unable to clear trace with method, trying manual overwrite")
             TraceableObject.trace = []
         }
