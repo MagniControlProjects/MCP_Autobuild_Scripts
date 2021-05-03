@@ -8,22 +8,18 @@
  * 
  */
 
-printObjectTrace(
-        Object HandoverTraceableObject
-        ){
-    printObjectTrace(
-        HandoverTraceableObject,
-        true
-    )
+printTrace (List tracelist){
+    for (i in tracelist){
+        println("${i}n")
+    }
+    return
 }
 
 printObjectTrace (
         Object TraceableObject,
         Boolean CleanAfterPrint //Defaults too true if called only with 1 parameter
         ){
-    for (i in TraceableObject.trace){
-        println(i)
-    }
+    printTrace(TraceableObject.trace)
     if (CleanAfterPrint){
         try{
             TraceableObject.clearTrace()
@@ -33,15 +29,18 @@ printObjectTrace (
             TraceableObject.trace = []
         }
     }
-    
 }
 
-printTrace (List tracelist){
-    for (i in tracelist){
-        println("${i}n")
-    }
-    return
+printObjectTrace(
+        Object HandoverTraceableObject
+        ){
+    printObjectTrace(
+        HandoverTraceableObject,
+        true
+    )
 }
+
+
 
 //Definition of a class object named "HelperObject"
 class HelperObject {
