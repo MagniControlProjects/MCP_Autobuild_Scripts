@@ -23,7 +23,7 @@ pipeline{
                 }
             }
         }
-        stage ("STAGE: Test Iterators")
+        stage ("STAGE: Test Iterators"){
             steps{
                 script{
                     test = [1,2,3]
