@@ -8,6 +8,10 @@
  * 
  */
 
+def PrintToLog(String StringToPrint){
+    println("${StringToPrint}\n")
+}
+
 //Definition of a class object named "HelperObject"
 class HelperObject {
     //Definition of Class attributes.
@@ -23,21 +27,26 @@ class HelperObject {
         Workspace = WORKSPACE;
         BuildId = BUILDID;
         BuildName = BUILDNAME;
-        Logger.echo = LoggerCall
-        Logger.echo "Workspace is ${this.Workspace}"
-        Logger.echo "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
+        PrintToLog("Workspace is ${this.Workspace}")
+        PrintToLog("Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}")
     }
     
     def testObjectToConsole (){
         // Print something to the console from inside the object class.
-        println "Inside HelperObject, testObjectToConsole method."
-        println "${Workspace}"
+        print ("Inside HelperObject, testObjectToConsole method.")
+        print ("${Workspace}")
+        return
     }
     
     def testReturn (){
         // Returnt the value of an attribute which may be generated inside the method.
-        println "InTestReturn"
+        print "InTestReturn"
         return "${Workspace}"
+    }
+    
+    def print(String StringToPrint){
+        PrintToLog(StringToPrint);
+        return
     }
 }
 
