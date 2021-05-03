@@ -1,49 +1,59 @@
-/*
- *   @author: George Linsdell
- *   @date:03/05/2021
- *   Contains a helper object as an initial test to see how objects work. 
- *   Object will grow to support minimal requirements in jobs.
- *   The assumption is made that jenkins Environment variables are present.
- *   
- * 
- */
-
-//Definition of a class object named "HelperObject"
-class HelperObject {
-    //Definition of Class attributes.
-    def Workspace = String 
-    def BuildId = String 
-    def BuildName = String
-    
-    // Constructor method, class requires passing of parameters on creation.
-    HelperObject (
-            String WORKSPACE,
-            String BUILDID,
-            String BUILDNAME
-            ){
-        Workspace = WORKSPACE;
-        BuildId = BUILDID;
-        BuildName = BUILDNAME;
-        println "Workspace is ${this.Workspace}"
-        println "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
+pipeline{
+    agent {
+        label "${EXECUTE_ON_LABEL}"
     }
-    
-    def  testObjectToConsole (){
-        // Print something to the console from inside the object class.
-        println "Inside HelperObject, testObjectToConsole method."
-        println "${Workspace}"
-    }
-    
-    def testReturn (){
-        // Returnt the value of an attribute which may be generated inside the method.
-        println "InTestReturn"
-        return "${Workspace}"
+    stages{
+        stage ("STAGE: Initialize Job and create "){
+            steps{
+                script{
+                    COMMON_UTILS_LOAD_LOCATION = "${WORKSPACE}/autobuild/CommonUtils/helper.groovy"
+                    echo ("CommonUtils at ${COMMON_UTILS_LOAD_LOCATION}")
+                    HelperScript = load (COMMON_UTILS_LOAD_LOCATION)
+                    Obj_Helper = HelperScript.GetHelperObject("${WORKSPACE}","${BUILD_ID}","${JOB_NAME}")
+                    echo "Test1: Output to console from inside the pipeline.
+                }
+            }
+        }
+        stage("STAGE: "){
+            steps{
+                script{
+                    "Test2: Output to console from inside the the Object."
+                    Obj_Helper.testObjectToConsole()
+                }
+            }
+        }
+        stage("STAGE: Setup Build Folder"){
+            steps{
+                script{
+                    echo "Do Stuff"
+                    
+                }
+            }
+        }
+        stage("STAGE: Generate Version Info"){
+            steps{
+                script{
+                    echo "Do Stuff"
+                    echo "${Obj_Helper.testReturn()}"
+                    
+                }
+            }
+        }
+        stage("STAGE: Do Building"){
+            steps{
+                script{
+                    echo "Test Object Variable Pulling"
+                    echo "${Obj_Helper.BuildId}"
+                    echo "Do Stuff"
+                }
+            }
+        }
+        stage("STAGE: Store Artifacts"){
+            steps{
+                script{
+                    echo "Do Stuff"
+                }
+            }
+        }
     }
 }
-
-//Accessor method to get the helper object.
-def GetHelperObject(){
-    return new HelperObject()
-}
-
-return this;
