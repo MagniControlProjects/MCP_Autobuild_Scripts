@@ -33,8 +33,13 @@ class HelperObject {
         Workspace = WORKSPACE;
         BuildId = BUILDID;
         BuildName = BUILDNAME;
+    }
+    
+    def GetWorkspace(){
+        println("Get Workspace ${this.Workspace}")
         appendTrace("Workspace is ${this.Workspace}")
         appendTrace("Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}")
+        return
     }
     
     def appendTrace(Item){
