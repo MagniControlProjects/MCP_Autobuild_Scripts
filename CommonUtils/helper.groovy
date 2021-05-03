@@ -8,14 +8,14 @@
  * 
  */
 
-printTrace (List tracelist){
+static def printTrace (List tracelist){
     for (i in tracelist){
         println("${i}n")
     }
     return
 }
 
-printObjectTrace (
+def printObjectTrace (
         Object TraceableObject,
         Boolean CleanAfterPrint //Defaults too true if called only with 1 parameter
         ){
@@ -31,7 +31,7 @@ printObjectTrace (
     }
 }
 
-printObjectTrace(
+def printObjectTrace(
         Object HandoverTraceableObject
         ){
     printObjectTrace(
