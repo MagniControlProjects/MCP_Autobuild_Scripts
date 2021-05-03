@@ -47,7 +47,7 @@ class HelperObject {
     def Workspace = String 
     def BuildId = String 
     def BuildName = String
-    trace = List
+    def trace = List
     // Constructor method, class requires passing of parameters on creation.
     HelperObject (
             String WORKSPACE,
