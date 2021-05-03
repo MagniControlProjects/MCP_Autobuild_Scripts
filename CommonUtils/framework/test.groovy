@@ -9,7 +9,7 @@ pipeline{
                     COMMON_UTILS_LOAD_LOCATION = "${WORKSPACE}/autobuild/CommonUtils/helper.groovy"
                     echo ("CommonUtils at ${COMMON_UTILS_LOAD_LOCATION}")
                     HelperScript = load (COMMON_UTILS_LOAD_LOCATION)
-                    Obj_Helper = HelperScript.GetHelperObject("${WORKSPACE}","${BUILD_ID}","${JOB_NAME}",echo)
+                    Obj_Helper = HelperScript.GetHelperObject("${WORKSPACE}","${BUILD_ID}","${JOB_NAME}")
                     echo "Test1: Output to console from inside the pipeline."
                 }
             }

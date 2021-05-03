@@ -46,15 +46,14 @@ class HelperObject {
 def GetHelperObject(
         String WORKSPACE,
         String BUILDID,
-        String BUILDNAME,
-        def LoggerCall
+        String BUILDNAME
         ){
     // Accessor method to get the helper object.
+    println("Generating Helper Object")
     return new HelperObject(
             WORKSPACE,
             BUILDID,
-            BUILDNAME,
-            LoggerCall
+            BUILDNAME
             )
 }
 
