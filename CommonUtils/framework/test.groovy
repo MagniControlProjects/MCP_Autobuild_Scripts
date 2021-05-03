@@ -28,7 +28,7 @@ pipeline{
                 script{
                     test = [1,2,3]
                     echo test
-                    test.each{echo ${it}}}
+                    test.each{echo ${it}}
                 }
             }
         }
