@@ -10,6 +10,7 @@
 
 def PrintToLog(String StringToPrint){
     println("${StringToPrint}\n")
+    return
 }
 
 //Definition of a class object named "HelperObject"
@@ -40,7 +41,7 @@ class HelperObject {
     
     def testReturn (){
         // Returnt the value of an attribute which may be generated inside the method.
-        print "InTestReturn"
+        print ("InTestReturn")
         return "${Workspace}"
     }
     
