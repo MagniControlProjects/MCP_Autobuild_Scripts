@@ -47,7 +47,7 @@ class HelperObject {
             trace = []
             _DestroyTrace = false
         }
-        trace << "- Trace - ${Item}"
+        trace << "[Trace] ${Item}"
         return
     }
     
