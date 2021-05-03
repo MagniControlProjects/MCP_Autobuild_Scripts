@@ -14,18 +14,20 @@ class HelperObject {
     def Workspace = String 
     def BuildId = String 
     def BuildName = String
-    
+    def Logger = Object
     // Constructor method, class requires passing of parameters on creation.
     HelperObject (
             String WORKSPACE,
             String BUILDID,
-            String BUILDNAME
+            String BUILDNAME,
+            LoggerCall
             ){
         Workspace = WORKSPACE;
         BuildId = BUILDID;
         BuildName = BUILDNAME;
-        println "Workspace is ${this.Workspace}"
-        println "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
+        Logger.echo = LoggerCall
+        Logger.echo "Workspace is ${this.Workspace}"
+        Logger.echo "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
     }
     
     def testObjectToConsole (){
