@@ -13,12 +13,12 @@ pipeline{
                 }
             }
         }
-        stage("STAGE: Print To console from inside Object Not Possible"){
+        stage("STAGE: Print To console from inside Object Not Possible, use iterator method and getter"){
             steps{
                 script{
                     echo "Test1: Output to console from inside the the Object."
                     Obj_Helper.testObjectToConsole()
-                    HelperScript.printObjectTrace(Obj_Helper)
+                    printTrace(Obj_Helper.getTrace(true))
                     echo "Test1: Complete."
                 }
             }

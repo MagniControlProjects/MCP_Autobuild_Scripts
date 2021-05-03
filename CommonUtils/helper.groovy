@@ -9,39 +9,12 @@
  * 
  */
 
-static def printTrace (List tracelist){
+def printTrace (List tracelist){
     tracelist.each{
-        println("${it}n")
+        println("${it}")
     }
     return
 }
-
-def printObjectTrace (
-        Object TraceableObject,
-        Boolean CleanAfterPrint //Defaults too true if called only with 1 parameter
-        ){
-    printTrace(TraceableObject.trace)
-    if (CleanAfterPrint){
-        try{
-            TraceableObject.clearTrace()
-        }
-        catch(e){
-            println("Unable to clear trace with method, trying manual overwrite")
-            TraceableObject.trace = []
-        }
-    }
-}
-
-def printObjectTrace(
-        Object HandoverTraceableObject
-        ){
-    printObjectTrace(
-        HandoverTraceableObject,
-        true
-    )
-}
-
-
 
 //Definition of a class object named "HelperObject"
 class HelperObject {
@@ -49,6 +22,7 @@ class HelperObject {
     def Workspace = String 
     def BuildId = String 
     def BuildName = String
+    def DestroyTrace = false
     def trace = []
     // Constructor method, class requires passing of parameters on creation.
     HelperObject (
@@ -59,26 +33,37 @@ class HelperObject {
         Workspace = WORKSPACE;
         BuildId = BUILDID;
         BuildName = BUILDNAME;
-        trace <<("Workspace is ${this.Workspace}")
-        trace <<("Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}")
+        appendTrace("Workspace is ${this.Workspace}")
+        appendTrace("Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}")
     }
     
-    def clearTrace (){
+    def appendTrace(Item){
+        if (_DestroyTrace){
+            trace = []
+            _DestroyTrace = false
+        }
+        trace << "- Trace - ${Item}"
+        return
+    }
+    
+    def getTrace (Boolean DestroyTrace){
         // As I can't seem to print from terminal, action will be stored in a trace.
-        trace = []
+        _DestroyTrace = DestroyTrace // Flag for destruction of trace on next append
+            
+        }
         return  
     }
     
     def testObjectToConsole (){
         // Print something to the console from inside the object class.
-        trace << ("Inside HelperObject, testObjectToConsole method.")
-        trace << ("${Workspace}")
+        appendTrace("Inside HelperObject, testObjectToConsole method.")
+        appendTrace("${Workspace}")
         return
     }
     
     def testReturn (){
         // Returnt the value of an attribute which may be generated inside the method.
-        trace << ("InTestReturn")
+        appendTrace("InTestReturn")
         return "${Workspace}"
     }
     
