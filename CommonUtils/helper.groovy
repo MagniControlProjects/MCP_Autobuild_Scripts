@@ -58,8 +58,8 @@ class HelperObject {
         Workspace = WORKSPACE;
         BuildId = BUILDID;
         BuildName = BUILDNAME;
-        trace.add("Workspace is ${this.Workspace}")
-        trace.add("Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}")
+        trace.push("Workspace is ${this.Workspace}")
+        trace.push("Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}")
     }
     
     def clearTrace (){
@@ -70,14 +70,14 @@ class HelperObject {
     
     def testObjectToConsole (){
         // Print something to the console from inside the object class.
-        trace.add ("Inside HelperObject, testObjectToConsole method.")
-        trace.add ("${Workspace}")
+        trace.push ("Inside HelperObject, testObjectToConsole method.")
+        trace.push ("${Workspace}")
         return
     }
     
     def testReturn (){
         // Returnt the value of an attribute which may be generated inside the method.
-        trace.add ("InTestReturn")
+        trace.push ("InTestReturn")
         return "${Workspace}"
     }
     
