@@ -18,7 +18,7 @@ class HelperObject {
     HelperObject (
             String WORKSPACE,
             String BUILDID,
-            String BUILDNAME,
+            String BUILDNAME
             ){
         Workspace = WORKSPACE;
         BuildId = BUILDID;
