@@ -16,9 +16,11 @@ pipeline{
         stage("STAGE: Print To console from inside Object Not Possible"){
             steps{
                 script{
-                    echo "Test1: Output to console from inside the the Object."
+                    
                     Obj_Helper.testObjectToConsole()
+                    echo "Test1: Output to console from inside the the Object."
                     HelperScript.printObjectTrace(Obj_Helper)
+                    
                 }
             }
         }
@@ -28,7 +30,7 @@ pipeline{
                     echo "Test2: Output to console with variable returned from object."
                     returnVal = Obj_Helper.testReturn()
                     echo "${returnVal}"
-                    
+                    echo "Test2: Complete."
                 }
             }
         }
@@ -38,6 +40,7 @@ pipeline{
                     echo "Test3: Output to console with variable returned from object."
                     echo "Build ID - ${Obj_Helper.BuildId}"
                     echo "Build Name - ${Obj_Helper.BuildName}"
+                    echo "Test3: Complete."
                 }
             }
         }
