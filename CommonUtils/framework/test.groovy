@@ -14,44 +14,30 @@ pipeline{
                 }
             }
         }
-        stage("STAGE: "){
+        stage("STAGE: Print To console from inside Object"){
             steps{
                 script{
-                    "Test2: Output to console from inside the the Object."
+                    echo "Test2: Output to console from inside the the Object."
                     Obj_Helper.testObjectToConsole()
                 }
             }
         }
-        stage("STAGE: Setup Build Folder"){
+        stage("STAGE: Print to console from variable returned from object"){
             steps{
                 script{
-                    echo "Do Stuff"
+                    echo "Test3: Output to console with variable returned from object."
+                    returnVal = Obj_Helper.testReturn()
+                    echo "${returnVal}"
                     
                 }
             }
         }
-        stage("STAGE: Generate Version Info"){
+        stage("STAGE: Print Properties of the object"){
             steps{
                 script{
-                    echo "Do Stuff"
-                    echo "${Obj_Helper.testReturn()}"
-                    
-                }
-            }
-        }
-        stage("STAGE: Do Building"){
-            steps{
-                script{
-                    echo "Test Object Variable Pulling"
-                    echo "${Obj_Helper.BuildId}"
-                    echo "Do Stuff"
-                }
-            }
-        }
-        stage("STAGE: Store Artifacts"){
-            steps{
-                script{
-                    echo "Do Stuff"
+                    echo "Test4: Output to console with variable returned from object."
+                    echo "Build ID - ${Obj_Helper.BuildId}"
+                    echo "Build Name - ${Obj_Helper.BuildName}"
                 }
             }
         }
