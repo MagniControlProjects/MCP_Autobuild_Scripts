@@ -10,22 +10,22 @@ pipeline{
                     echo ("CommonUtils at ${COMMON_UTILS_LOAD_LOCATION}")
                     HelperScript = load (COMMON_UTILS_LOAD_LOCATION)
                     Obj_Helper = HelperScript.GetHelperObject("${WORKSPACE}","${BUILD_ID}","${JOB_NAME}")
-                    echo "Test1: Output to console from inside the pipeline."
                 }
             }
         }
-        stage("STAGE: Print To console from inside Object"){
+        stage("STAGE: Print To console from inside Object Not Possible"){
             steps{
                 script{
-                    echo "Test2: Output to console from inside the the Object."
+                    echo "Test1: Output to console from inside the the Object."
                     Obj_Helper.testObjectToConsole()
+                    HelperScript.printObjectTrace(Obj_Helper)
                 }
             }
         }
         stage("STAGE: Print to console from variable returned from object"){
             steps{
                 script{
-                    echo "Test3: Output to console with variable returned from object."
+                    echo "Test2: Output to console with variable returned from object."
                     returnVal = Obj_Helper.testReturn()
                     echo "${returnVal}"
                     
@@ -35,7 +35,7 @@ pipeline{
         stage("STAGE: Print Properties of the object"){
             steps{
                 script{
-                    echo "Test4: Output to console with variable returned from object."
+                    echo "Test3: Output to console with variable returned from object."
                     echo "Build ID - ${Obj_Helper.BuildId}"
                     echo "Build Name - ${Obj_Helper.BuildName}"
                 }

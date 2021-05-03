@@ -8,8 +8,36 @@
  * 
  */
 
-PrintToLog(String StringToPrint){
-    println("${StringToPrint}\n")
+printObjectTrace(Object TraceableObject){
+    printObjectTrace(
+        TraceableObject,
+        true
+    )
+}
+
+printObjectTrace (
+        Object TraceableObject,
+        Boolean CleanAfterPrint //Defaults too true if called only with 1 parameter
+        ){
+    for (i in TraceableObject.trace){
+        println(i)
+    }
+    if (CleanAfterPrint){
+        try{
+            TraceableObject.clearTrace
+        }
+        except{
+            println("Unable to clear trace with method, trying manual overwrite")
+            TraceableObject.trace = []
+        }
+    }
+    
+}
+
+printTrace (list tracelist){
+    for (i in tracelist){
+        println("${i}n")
+    }
     return
 }
 
@@ -19,6 +47,7 @@ class HelperObject {
     def Workspace = String 
     def BuildId = String 
     def BuildName = String
+    trace = List
     // Constructor method, class requires passing of parameters on creation.
     HelperObject (
             String WORKSPACE,
@@ -28,27 +57,29 @@ class HelperObject {
         Workspace = WORKSPACE;
         BuildId = BUILDID;
         BuildName = BUILDNAME;
-        PrintToLog("Workspace is ${this.Workspace}")
-        PrintToLog("Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}")
+        trace.append("Workspace is ${this.Workspace}")
+        trace.append("Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}")
+    }
+    
+    def clearTrace (){
+        // As I can't seem to print from terminal, action will be stored in a trace.
+        trace = trace
+        return  
     }
     
     def testObjectToConsole (){
         // Print something to the console from inside the object class.
-        print ("Inside HelperObject, testObjectToConsole method.")
-        print ("${Workspace}")
+        trace.append ("Inside HelperObject, testObjectToConsole method.")
+        trace.append ("${Workspace}")
         return
     }
     
     def testReturn (){
         // Returnt the value of an attribute which may be generated inside the method.
-        print ("InTestReturn")
+        trace.append ("InTestReturn")
         return "${Workspace}"
     }
     
-    def print(String StringToPrint){
-        PrintToLog(StringToPrint);
-        return
-    }
 }
 
 def GetHelperObject(
