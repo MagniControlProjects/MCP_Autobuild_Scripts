@@ -23,6 +23,15 @@ pipeline{
                 }
             }
         }
+        stage ("STAGE: Test Iterators")
+            steps{
+                script{
+                    test = [1,2,3]
+                    echo test
+                    test.each{echo ${it}}}
+                }
+            }
+        }
         stage("STAGE: Print to console from variable returned from object"){
             steps{
                 script{
