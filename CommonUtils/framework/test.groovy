@@ -26,7 +26,9 @@ pipeline{
         stage ("STAGE: Test Iterators"){
             steps{
                 script{
-                    test = [1,2,3]
+                    test = []
+                    test << "1"
+                    test << "2"
                     test.each{echo "${it}"}
                 }
             }
