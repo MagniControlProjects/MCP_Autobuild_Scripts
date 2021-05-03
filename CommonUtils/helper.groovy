@@ -8,7 +8,7 @@
  * 
  */
 
-def PrintToLog(String StringToPrint){
+PrintToLog(String StringToPrint){
     println("${StringToPrint}\n")
     return
 }
