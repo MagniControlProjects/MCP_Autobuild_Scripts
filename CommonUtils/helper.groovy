@@ -10,7 +10,7 @@
  */
 
 static def printTrace (List tracelist){
-    for (i in tracelist){
+    tracelist.each{
         println("${i}n")
     }
     return
