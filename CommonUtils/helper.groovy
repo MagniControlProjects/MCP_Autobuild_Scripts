@@ -24,19 +24,19 @@ class HelperObject {
         Workspace = WORKSPACE;
         BuildId = BUILDID;
         BuildName = BUILDNAME;
-        println "Workspace is ${this.Workspace}"
-        println "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
+        echo "Workspace is ${this.Workspace}"
+        echo "Helper Initialized for Build Name ${this.BuildName}-${this.BuildId}"
     }
     
     def testObjectToConsole (){
         // Print something to the console from inside the object class.
-        println "Inside HelperObject, testObjectToConsole method."
-        println "${Workspace}"
+        echo "Inside HelperObject, testObjectToConsole method."
+        echo "${Workspace}"
     }
     
     def testReturn (){
         // Returnt the value of an attribute which may be generated inside the method.
-        println "InTestReturn"
+        echo "InTestReturn"
         return "${Workspace}"
     }
 }
