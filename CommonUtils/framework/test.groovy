@@ -18,7 +18,7 @@ pipeline{
                 script{
                     echo "Test1: Output to console from inside the the Object."
                     Obj_Helper.testObjectToConsole()
-                    printTrace(Obj_Helper.getTrace(true))
+                    HelperScript.printTrace(Obj_Helper.getTrace(true))
                     echo "Test1: Complete."
                 }
             }
