@@ -34,7 +34,7 @@ printObjectTrace (
     
 }
 
-printTrace (list tracelist){
+printTrace (List tracelist){
     for (i in tracelist){
         println("${i}n")
     }
