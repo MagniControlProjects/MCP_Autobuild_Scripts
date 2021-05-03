@@ -27,7 +27,7 @@ pipeline{
             steps{
                 script{
                     test = [1,2,3]
-                    test.each{echo {it}}
+                    test.each{echo "{it}"}
                 }
             }
         }
